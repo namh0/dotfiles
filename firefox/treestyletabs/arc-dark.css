@@ -1,0 +1,15 @@
+#tabbar:not(.overflow) .after-tabs {
+  display: none;
+}
+#tabbar:not(.overflow) ~ .after-tabs {
+  display: block;
+}
+
+.tab:not(:hover) .closebox {
+  display: none;
+}
+
+.tab.active {
+  background-color: #5294e2;
+  color: #fff !important;
+}
