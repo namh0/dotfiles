@@ -75,6 +75,16 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 autoload -Uz compinit; compinit
 
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/namho/google-cloud-sdk/path.zsh.inc' ]; then . '/home/namho/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/namho/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/namho/google-cloud-sdk/completion.zsh.inc'; fi
+
 # Kubernetes
 source <(kubectl completion zsh)
 source <(helm completion zsh)
