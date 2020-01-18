@@ -25,8 +25,20 @@ syntax enable
 set termguicolors
 set background=dark
 
-colorscheme molokai
+colo molokai
 let g:lightline = {'colorscheme': 'molokai'}
+
+"set background=dark
+"let g:PaperColor_Theme_Options = {
+"  \   'theme': {
+"  \     'default.dark': {
+"  \       'allow_italic': 1
+"  \     }
+"  \   }
+"  \ }
+"colo PaperColor
+
+"highlight Comment cterm=italic gui=italic
 
 set number
 set laststatus=2
