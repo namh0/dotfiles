@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 " Themes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'fatih/molokai'
+Plug 'lifepillar/vim-solarized8'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Lightline Themes
 Plug 'itchyny/lightline.vim'
@@ -25,18 +27,12 @@ syntax enable
 set termguicolors
 set background=dark
 
-colo molokai
-let g:lightline = {'colorscheme': 'molokai'}
+"colo molokai
+"let g:lightline = {'colorscheme': 'molokai'}
 
-"set background=dark
-"let g:PaperColor_Theme_Options = {
-"  \   'theme': {
-"  \     'default.dark': {
-"  \       'allow_italic': 1
-"  \     }
-"  \   }
-"  \ }
-"colo PaperColor
+set background=dark
+colo solarized8_flat
+let g:lightline = {'colorscheme': 'solarized'}
 
 "highlight Comment cterm=italic gui=italic
 
