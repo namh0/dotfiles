@@ -27,20 +27,23 @@ call plug#end()
 syntax enable
 set background=dark
 
-" Nord
-let g:nord_cursor_line_number_background = 1
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-let g:nord_underline = 1
-colo nord
+" For Nord
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
+"let g:nord_underline = 1
+"colo nord
 "#2a2d39 for less contrast
-highlight Normal guibg=#242933
-highlight LineNr guibg=#242933
+"highlight Normal guibg=#242933
+"highlight LineNr guibg=#242933
 
-let g:lightline = {'colorscheme': 'nord'}
+" Dracula
+let g:dracula_italic = 0
+let g:polyglot_disabled = ['yaml']
+colo dracula
+let g:lightline = {'colorscheme': 'dracula'}
 set termguicolors
 
-"let g:polyglot_disabled = ['yaml']
 "highlight Comment cterm=italic gui=italic
 
 set number
