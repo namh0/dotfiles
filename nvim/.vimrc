@@ -4,7 +4,9 @@ call plug#begin('~/.vim/plugged')
 
 " Themes
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'fatih/molokai'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'rakr/vim-one'
 Plug 'lifepillar/vim-solarized8'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -14,7 +16,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
-"Plug 'vim-ruby/vim-ruby'
 Plug 'plasticboy/vim-markdown'
 "Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
@@ -24,16 +25,22 @@ call plug#end()
 
 " Colors / Themes
 syntax enable
+set background=dark
+
+" Nord
+let g:nord_cursor_line_number_background = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_underline = 1
+colo nord
+"#2a2d39 for less contrast
+highlight Normal guibg=#242933
+highlight LineNr guibg=#242933
+
+let g:lightline = {'colorscheme': 'nord'}
 set termguicolors
-set background=dark
 
-"colo molokai
-"let g:lightline = {'colorscheme': 'molokai'}
-
-set background=dark
-colo solarized8_flat
-let g:lightline = {'colorscheme': 'solarized'}
-
+"let g:polyglot_disabled = ['yaml']
 "highlight Comment cterm=italic gui=italic
 
 set number
@@ -101,6 +108,5 @@ autocmd Filetype markdown setlocal spell
 autocmd Filetype text setlocal spell
 
 let g:netrw_dirhistmax=0
-
 "For Konsole ¯\_(ツ)_/¯
 "set guicursor=

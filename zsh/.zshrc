@@ -88,3 +88,6 @@ if [ -f '/home/namho/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/namho
 # Kubernetes
 source <(kubectl completion zsh)
 source <(helm completion zsh)
+
+# NeoVim as default editor
+VISUAL=nvim; export VISUAL EDITOR=nvim; export EDITOR
