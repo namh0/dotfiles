@@ -5,9 +5,7 @@ call plug#begin('~/.vim/plugged')
 " Themes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'arcticicestudio/nord-vim'
-Plug 'rakr/vim-one'
-Plug 'lifepillar/vim-solarized8'
+Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Lightline Themes
@@ -27,20 +25,11 @@ call plug#end()
 syntax enable
 set background=dark
 
-" For Nord
-"let g:nord_cursor_line_number_background = 1
-"let g:nord_italic = 1
-"let g:nord_italic_comments = 1
-"let g:nord_underline = 1
-"colo nord
-"#2a2d39 for less contrast
-"highlight Normal guibg=#242933
-"highlight LineNr guibg=#242933
-
 " Dracula
 let g:dracula_italic = 0
 let g:polyglot_disabled = ['yaml']
 colo dracula
+
 let g:lightline = {'colorscheme': 'dracula'}
 set termguicolors
 
