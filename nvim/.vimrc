@@ -15,7 +15,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
-"Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-surround'
 
 " Initialize plugin system
