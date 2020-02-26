@@ -55,10 +55,10 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
 # FZF
-source /usr/share/fzf/shell/key-bindings.zsh
+source $HOME/dotfiles/zsh/fzf-key-bindings.zsh
 
 # Work Scripts
-[ -f ~/Documents/work/gitlab/scripts/.work-scripts.zsh ] && source ~/Documents/work/gitlab/scripts/.work-scripts.zsh
+#[ -f ~/Documents/work/gitlab/scripts/.work-scripts.zsh ] && source ~/Documents/work/gitlab/scripts/.work-scripts.zsh
 
 # ZSH history
 HISTSIZE=500000
