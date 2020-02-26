@@ -12,8 +12,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'
 
 Plug 'tpope/vim-eunuch'
-Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
 
