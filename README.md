@@ -1,3 +1,3 @@
 # Namho's Dotfiles
 
-These are my dotfiles for Debian Sid with KDE.
+Dotfiles for zsh, neovim, tmux, kde on OpenSUSE Tumbleweed.
