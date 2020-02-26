@@ -1,0 +1,9 @@
+[Applications][firefox]
+Seen=true
+
+[Applications][keybase]
+Seen=true
+ShowInHistory=false
+
+[Applications][thunderbird]
+Seen=true
