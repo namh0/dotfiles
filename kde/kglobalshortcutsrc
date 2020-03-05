@@ -24,12 +24,12 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{4f96a193-5fc7-4a65-9063-5f3760fc2527}=Alt+Shift+V,none,Copyq Clipboard
-{8e4b6939-5a76-4440-8122-a77641193bf8}=Ctrl+Shift+Space,none,Flameshot Select
-{c5aecc95-93e0-41e7-aaed-199c0828bc8e}=Meta+Return,none,Kitty
+{89756d97-9c4b-4c04-aedd-13db6c33c45a}=Ctrl+Shift+Space,none,Flameshot GUI
+{96936f43-c110-49da-8fec-3f0827d96d98}=Alt+>,none,Copyq Snippets
+{9fc08d1c-e0e9-4e6a-92dd-69cc97cdb28d}=Alt+Shift+V,none,Copyq Clipboard
+{a362d854-81e5-408a-acbb-ba4d76c078b4}=,none,Launch Konsole
+{ca549864-39b9-4d30-b3ae-723807a8b3a5}=Meta+Return,none,Kitty Terminal
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
-{d4c560cd-5287-4eb8-b553-b81beb87a8cc}=Ctrl+Alt+T,none,Launch Konsole
-{ddd5c9e7-47f2-4017-bcab-52259ba01ae7}=Alt+>,none,Copyq Snippets
 
 [kmix]
 _k_friendly_name=Audio Volume

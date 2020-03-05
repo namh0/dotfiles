@@ -117,8 +117,8 @@ ColorScheme=Arc
 Name=Breeze
 XftHintStyle=hintslight
 XftSubPixel=rgb
-dbfile=/home/namho/.mozilla/firefox/e2s2vn6y.default/places.sqlite
-fixed=Source Code Pro,10,-1,5,50,0,0,0,0,0,Regular
+dbfile=/home/namho/.mozilla/firefox/nnx42ilc.default/places.sqlite
+fixed=Fira Code,10,-1,5,50,0,0,0,0,0,Regular
 font=Ubuntu,10,-1,5,50,0,0,0,0,0,Regular
 menuFont=Ubuntu,10,-1,5,50,0,0,0,0,0,Regular
 shadeSortColumn=true
@@ -157,7 +157,7 @@ View Style=DetailTree
 
 [KScreen]
 ScaleFactor=1.5
-ScreenScaleFactors=eDP-1=1.5;DP-1=1.5;HDMI-1=1.5;DP-2=1.5;
+ScreenScaleFactors=eDP-1=1.5;DP-1=1.5;HDMI-1=1.5;DP-2=1.5;HDMI-2=1.5;
 
 [WM]
 FakeEntryToKeepThisGroup=true
