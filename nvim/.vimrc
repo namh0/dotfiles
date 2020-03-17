@@ -16,6 +16,7 @@ Plug 'fatih/vim-go'
 Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-surround'
+Plug 'hashivim/vim-terraform'
 
 " Initialize plugin system
 call plug#end()
