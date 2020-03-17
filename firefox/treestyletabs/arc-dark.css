@@ -9,7 +9,37 @@
   display: none;
 }
 
+
+/* "#tabbar" is required for TST 3.4.0 and later! */
+#tabbar tab-item:not(:hover) tab-closebox {
+  display: none;
+}
+
+.contextual-identity-marker {
+  position: absolute !important;
+  pointer-events: none;
+  z-index: 0;
+  
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  
+  width: unset !important;
+  height: unset !important;  
+    
+  opacity: 0.7;
+}
+
 .tab.active {
   background-color: #5294e2;
   color: #fff !important;
+}
+
+.tab:hover {
+  background-color: rgba(76, 138, 242, .8);
+}
+
+.tab:not(.pinned) {
+  padding-left: 0px !important; /* !important is required when there are enough tabs to cause a scrollbar */
 }

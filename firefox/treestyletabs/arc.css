@@ -1,8 +1,20 @@
+#tabbar:not(.overflow) .after-tabs {
+  display: none;
+}
+#tabbar:not(.overflow) ~ .after-tabs {
+  display: block;
+}
+
 .tab:not(:hover) .closebox {
   display: none;
 }
 
-/* Highlight tabs with container color */
+
+/* "#tabbar" is required for TST 3.4.0 and later! */
+#tabbar tab-item:not(:hover) tab-closebox {
+  display: none;
+}
+
 .contextual-identity-marker {
   position: absolute !important;
   pointer-events: none;
@@ -20,8 +32,8 @@
 }
 
 .tab.active {
-  background-color: rgba(155, 191, 249, .6);
-
+  background-color: #5294e2;
+  color: #fff !important;
 }
 
 .tab:hover {
