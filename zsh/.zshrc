@@ -5,11 +5,11 @@ if [ -z "$TMUX" ]; then tmux a || tmux new -s default; fi
 if [ "$TMUX" = "" ]; then export TERM="xterm-256color"; fi
 
 unset SSH_ASKPASS
-
+eval "$(starship init zsh)"
 # ANTIBODY
 source <(antibody init)
 antibody bundle mafredri/zsh-async
-antibody bundle sindresorhus/pure
+#antibody bundle sindresorhus/pure
 antibody bundle zdharma/fast-syntax-highlighting
 antibody bundle zsh-users/zsh-completions
 # END ANTIBODY
@@ -29,10 +29,11 @@ alias grep="grep --color=auto"
 alias wgm="$HOME/dotfiles/scripts/wgm.sh"
 alias wgd="$HOME/dotfiles/scripts/wgd.sh"
 alias wgs="sudo wg show"
+alias tfswitch="tfswitch -b $HOME/bin/terraform"
 
 # ENV
 export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH:/usr/local/go/bin:/usr/local/bin:/usr/sbin"
+export PATH="$GOPATH/bin:$PATH:/usr/local/go/bin:/usr/local/bin:/usr/sbin:$HOME/bin/terraform"
 export GROFF_NO_SGR=yes
 
 # Vim Mode
