@@ -30,10 +30,11 @@ alias wgm="$HOME/dotfiles/scripts/wgm.sh"
 alias wgd="$HOME/dotfiles/scripts/wgd.sh"
 alias wgs="sudo wg show"
 alias tfswitch="tfswitch -b $HOME/bin/terraform"
+alias packer="/usr/local/bin/packer"
 
 # ENV
 export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH:/usr/local/go/bin:/usr/local/bin:/usr/sbin:$HOME/bin/terraform"
+export PATH="$GOPATH/bin:$PATH:/usr/local/go/bin:/usr/local/bin:/usr/sbin:$HOME/bin/terraform:/sbin"
 export GROFF_NO_SGR=yes
 
 # Vim Mode
