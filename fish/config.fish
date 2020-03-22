@@ -4,6 +4,9 @@ if test "$TMUX" = ""; tmux a || tmux new -s default; end
 # For Kitty; set $TERM to xterm-256color instead of xterm-kitty
 if test "$TMUX" = ""; set -gx TERM xterm-256color; end
 
+# FZF
+source $HOME/.config/fish/fzf-key-bindings.fish
+
 # NeoVim as default editor
 set VISUAL nvim; set -gx VISUAL EDITOR nvim; set -gx EDITOR
 
@@ -30,8 +33,5 @@ alias tfswitch="tfswitch -b $HOME/bin/terraform"
 # ENV
 set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH $PATH /usr/local/go/bin /usr/local/bin /usr/sbin $HOME/bin/terraform
-
-# FZF
-source fzf-key-bindings.fish
 
 starship init fish | source
