@@ -119,11 +119,11 @@ XftHintStyle=hintslight
 XftSubPixel=rgb
 dbfile=/home/namho/.mozilla/firefox/nnx42ilc.default/places.sqlite
 fixed=Fira Code Retina,10,-1,5,53,0,0,0,0,0,Regular
-font=Ubuntu,10,-1,5,50,0,0,0,0,0,Regular
-menuFont=Ubuntu,10,-1,5,50,0,0,0,0,0,Regular
+font=Ubuntu,11,-1,5,50,0,0,0,0,0
+menuFont=Ubuntu,11,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
-smallestReadableFont=Ubuntu,10,-1,5,50,0,0,0,0,0,Regular
-toolBarFont=Ubuntu,10,-1,5,50,0,0,0,0,0,Regular
+smallestReadableFont=Ubuntu,11,-1,5,50,0,0,0,0,0
+toolBarFont=Ubuntu,11,-1,5,50,0,0,0,0,0
 widgetStyle=Breeze
 
 [Icons]
@@ -156,14 +156,14 @@ Speedbar Width=197
 View Style=DetailTree
 
 [KScreen]
-ScaleFactor=1.5
-ScreenScaleFactors=eDP-1=1.5;DP-1=1.5;HDMI-1=1.5;DP-2=1.5;HDMI-2=1.5;
+ScaleFactor=1
+ScreenScaleFactors=eDP-1=1;DP-1=1;HDMI-1=1;DP-2=1;HDMI-2=1;
 
 [WM]
 FakeEntryToKeepThisGroup=true
 activeBackground=231,232,235
 activeBlend=231,232,235
-activeFont=Ubuntu,10,-1,5,57,0,0,0,0,0,Medium
+activeFont=Ubuntu,11,-1,5,57,0,0,0,0,0,Medium
 activeForeground=92,97,108
 inactiveBackground=231,232,235
 inactiveBlend=231,232,235
