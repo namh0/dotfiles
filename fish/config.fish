@@ -32,6 +32,6 @@ alias tfswitch="tfswitch -b $HOME/bin/terraform"
 
 # ENV
 set -gx GOPATH $HOME/go
-set -gx PATH $GOPATH $PATH /usr/local/go/bin /usr/local/bin /usr/sbin $HOME/bin/terraform
+set -gx PATH $GOPATH/bin $PATH $HOME/bin /usr/local/go/bin /usr/local/bin /usr/sbin /snap/bin
 
 starship init fish | source
