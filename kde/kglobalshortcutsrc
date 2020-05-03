@@ -1,6 +1,14 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
+switch-to-activity-1ba5353f-b1b4-4ede-b630-2fce823215ce=none,none,Switch to activity "Default"
 switch-to-activity-cf9ade2b-489c-45e7-b5c2-22cc76dd1144=none,none,Switch to activity "Default"
+
+[Clementine]
+_k_friendly_name=Clementine
+next_track=,none,Next track
+play_pause=,none,Play/Pause
+prev_track=,none,Previous track
+stop=,none,Stop
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
@@ -15,7 +23,7 @@ _k_friendly_name=Accessibility
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=KDE Daemon
+_k_friendly_name=System Settings Module
 
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity

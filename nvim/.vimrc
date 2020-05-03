@@ -4,35 +4,36 @@ call plug#begin('~/.vim/plugged')
 
 " Themes
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Lightline Themes
 Plug 'itchyny/lightline.vim'
 
-Plug 'tpope/vim-eunuch'
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'fatih/vim-go'
-Plug 'sheerun/vim-polyglot'
 Plug 'plasticboy/vim-markdown'
-Plug 'tpope/vim-surround'
 Plug 'hashivim/vim-terraform'
+Plug 'hashicorp/sentinel.vim'
+
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
+Plug 'luochen1990/rainbow'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
 
 " Colors / Themes
+set termguicolors
 syntax enable
 set background=dark
 
 " Dracula
 let g:dracula_italic = 0
-let g:polyglot_disabled = ['yaml']
 colo dracula
-
 let g:lightline = {'colorscheme': 'dracula'}
-set termguicolors
-
 "highlight Comment cterm=italic gui=italic
 
 set number
@@ -47,6 +48,8 @@ vnoremap d "_d
 
 " Spaces, Tabs
 set ts=4 sw=4 expandtab breakindent
+autocmd FileType python     setlocal    ts=4 sw=4 expandtab
+autocmd Filetype nim        setlocal    ts=2 sw=2 expandtab
 autocmd Filetype html       setlocal    ts=2 sw=2 expandtab
 autocmd Filetype css        setlocal    ts=2 sw=2 expandtab
 autocmd Filetype gohtmltmpl setlocal    ts=2 sw=2 expandtab
@@ -60,8 +63,21 @@ autocmd Filetype go         setlocal    ts=4 sw=4 noexpandtab
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-let g:indentLine_leadingSpaceEnabled = 1 
+"let g:indentLine_leadingSpaceEnabled = 1 
+
+"JSON Settings
 let g:vim_json_syntax_conceal = 0
+
+"Python Settings
+let g:semshi#simplify_markup = v:false
+let g:semshi#mark_selected_nodes = 0
+let g:semshi#error_sign = v:false
+let g:semshi#always_update_all_highlights = v:true
+function MyCustomHighlights()
+    hi semshiBuiltin      ctermfg=207 guifg=#8BE9FD
+    hi semshiUnresolved   ctermfg=226 guifg=#FF5555 cterm=underline gui=underline
+endfunction
+autocmd FileType python call MyCustomHighlights()
 
 "Markdown Settings
 let g:vim_markdown_folding_disabled = 1
@@ -87,11 +103,15 @@ let g:go_info_mode='gopls'
 au BufRead,BufNewFile *.gohtml set filetype=gohtmltmpl
 au BufRead,BufNewFile *.tmpl set filetype=gotexttmpl
 
-"Ruby settings
-let ruby_operators        = 1
+"Terraform Settings
+let g:terraform_fmt_on_save = 1
+
+au BufRead,BufNewFile *.hcl set filetype=tf
 
 nnoremap <C-S> :update<cr>
 inoremap <C-S> <C-O>:update<cr>
+
+let g:rainbow_active = 1
 
 " Spell check settings
 set spelllang=en

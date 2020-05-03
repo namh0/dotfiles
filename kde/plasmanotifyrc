@@ -8,5 +8,8 @@ Seen=true
 Seen=true
 ShowInHistory=false
 
+[Applications][seafile]
+Seen=true
+
 [Applications][thunderbird]
 Seen=true

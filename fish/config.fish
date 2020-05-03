@@ -8,7 +8,7 @@ if test "$TMUX" = ""; set -gx TERM xterm-256color; end
 source $HOME/.config/fish/fzf-key-bindings.fish
 
 # NeoVim as default editor
-set VISUAL nvim; set -gx VISUAL EDITOR nvim; set -gx EDITOR
+set -gx EDITOR nvim
 
 # Vim Mode
 fish_vi_key_bindings
