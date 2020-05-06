@@ -1,3 +1,3 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-wg-quick up mullvad-${1}
+sudo wg-quick up mullvad-${1}

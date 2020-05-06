@@ -1,3 +1,3 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-wg-quick down $(sudo wg show | grep interface | awk -F ": " '{print $2}')
+sudo wg-quick down $(sudo wg show | grep interface | awk -F ": " '{print $2}')
