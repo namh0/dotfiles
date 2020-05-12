@@ -1,20 +1,74 @@
 #!/usr/bin/env python
 
-import subprocess, re
+import subprocess, re, json
+from pathlib import Path
+from typing import Dict
 
-process = subprocess.Popen(['mullvad', 'status', '-l'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-stdout, stderr = process.communicate()
+filepath = Path(Path.home(), '.mullvad.json')
 
-if len(stderr) != 0:
-    print(f'Error: {stderr.decode("utf-8")}')
-else:
-    stdout = stdout.decode('utf-8').strip()
-    status_check = re.compile(r'(^Tunnel status: )(.*)')
-    status = status_check.match(stdout).groups()[1]
-    location = re.findall(r'(Location: )(.*)', stdout)[0][1].split(',')[0]
-    if status == 'Disconnected':
-        print(f' {status}  {location}')
-    else:
-        relay = re.findall(r'(Relay: )(.*)', stdout)[0][1]
-        print(f' {relay}  {location}') 
+
+def get_mullvad_status() -> (str, str):
+    process = subprocess.Popen(['mullvad', 'status', '-l'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+
+    location = ''
+    status = 'Wireguard Connected'
+    if len(stderr) == 0:
+        stdout = stdout.decode('utf-8')
+        location = '  ' + re.findall(r'(Location: )(.*)', stdout)[0][1].split(',')[0].strip()
+        status = re.findall(r'(Relay: )(.*)', stdout)[0][1].split(',')[0].strip()
+    
+    return status, location
+    
+
+def check_wireguard() -> (bool, str): 
+    process = subprocess.Popen(['sudo', 'wg', 'show'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+    if len(stdout) == 0 and len(stderr) == 0:
+        return False, ''
+    endpoint = re.findall(r'(endpoint: )(.*)(:\d+)', stdout.decode('utf-8'))[0][1].strip()
+    return True, endpoint
+
+
+def should_update(ep: str) -> (bool, Dict):
+    with open(filepath, 'r') as file:
+        raw = file.read()
+        data = {}
+        if len(raw) != 0:
+            data = json.loads(raw)
+            if data['endpoint'] == ep:
+                return False, data
+            else:
+                return True, data
+    
+    return True, data
+
+
+def update_file(data: Dict[str, str]):
+    with open(filepath, 'w') as file:
+        json.dump(data, file, indent=2)
+
+
+def main() -> str:
+    if not filepath.exists():
+        filepath.touch()
+
+    check, endpoint = check_wireguard()
+    status_i = ''
+    data = {}
+    data['status'] = 'Disconnected'
+    data['location'] = ''
+    
+    if check:
+        status_i = ''
+        should, data = should_update(endpoint)
+        if should:
+            data['status'], data['location'] = get_mullvad_status()
+            data['endpoint'] = endpoint
+            update_file(data)
+
+    print(f'{status_i} {data["status"]}{data["location"]}')
+
+
+main()
