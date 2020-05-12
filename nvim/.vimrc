@@ -31,10 +31,10 @@ syntax enable
 set background=dark
 
 " Dracula
-let g:dracula_italic = 0
+" let g:dracula_italic = 0
 colo dracula
 let g:lightline = {'colorscheme': 'dracula'}
-"highlight Comment cterm=italic gui=italic
+highlight Comment cterm=italic gui=italic
 
 set number
 set laststatus=2
