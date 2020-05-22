@@ -29,6 +29,8 @@ alias wgm="$HOME/dotfiles/scripts/wgm.sh"
 alias wgd="$HOME/dotfiles/scripts/wgd.sh"
 alias wgs="sudo wg show"
 alias tfswitch="tfswitch -b $HOME/bin/terraform"
+alias upp="sudo dnf upgrade -y; flatpak update -y"
+
 
 # ENV
 set -gx GOPATH $HOME/go
