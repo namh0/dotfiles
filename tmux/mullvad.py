@@ -22,12 +22,22 @@ def get_mullvad_status() -> (str, str):
     return status, location
     
 
-def check_wireguard() -> (bool, str): 
-    process = subprocess.Popen(['sudo', 'wg', 'show'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+# Not working since mullvad 2020.4 - using quick_status_check instead
+# def check_wireguard() -> (bool, str): 
+#     process = subprocess.Popen(['sudo', 'wg', 'show'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#     stdout, stderr = process.communicate()
+#     if len(stdout) == 0 and len(stderr) == 0:
+#         return False, ''
+#     endpoint = re.findall(r'(endpoint: )(.*)(:\d+)', stdout.decode('utf-8'))[0][1].strip()
+#     return True, endpoint
+
+
+def quick_status_check() -> (bool, str):
+    process = subprocess.Popen(['mullvad', 'status'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
     if len(stdout) == 0 and len(stderr) == 0:
         return False, ''
-    endpoint = re.findall(r'(endpoint: )(.*)(:\d+)', stdout.decode('utf-8'))[0][1].strip()
+    endpoint = re.findall(r'(\- )(\d+.\d+.\d+.\d+)(:\d+)', stdout.decode('utf-8'))[0][1].strip()
     return True, endpoint
 
 
@@ -54,7 +64,7 @@ def main() -> str:
     if not filepath.exists():
         filepath.touch()
 
-    check, endpoint = check_wireguard()
+    check, endpoint = quick_status_check()
     status_i = ''
     data = {}
     data['status'] = 'Disconnected'
