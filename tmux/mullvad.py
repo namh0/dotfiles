@@ -37,7 +37,10 @@ def quick_status_check() -> (bool, str):
     stdout, stderr = process.communicate()
     if len(stdout) == 0 and len(stderr) == 0:
         return False, ''
-    endpoint = re.findall(r'(\- )(\d+.\d+.\d+.\d+)(:\d+)', stdout.decode('utf-8'))[0][1].strip()
+    endpoint_re = re.findall(r'(\- )(\d+.\d+.\d+.\d+)(:\d+)', stdout.decode('utf-8'))
+    if len(endpoint_re) == 0:
+        return False, ''
+    endpoint = endpoint_re[0][1].strip()
     return True, endpoint
 
 
