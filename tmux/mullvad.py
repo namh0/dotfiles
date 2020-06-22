@@ -63,7 +63,7 @@ def update_file(data: Dict[str, str]):
         json.dump(data, file, indent=2)
 
 
-def main() -> str:
+def main():
     if not filepath.exists():
         filepath.touch()
 
