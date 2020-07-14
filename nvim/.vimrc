@@ -11,6 +11,7 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'vim-ruby/vim-ruby'
 Plug 'fatih/vim-go'
 Plug 'plasticboy/vim-markdown'
 Plug 'hashivim/vim-terraform'
@@ -78,6 +79,10 @@ function MyCustomHighlights()
     hi semshiUnresolved   ctermfg=226 guifg=#FF5555 cterm=underline gui=underline
 endfunction
 autocmd FileType python call MyCustomHighlights()
+
+" Ruby Settings
+let ruby_operators = 1
+let ruby_pseudo_operators = 1
 
 "Markdown Settings
 let g:vim_markdown_folding_disabled = 1
