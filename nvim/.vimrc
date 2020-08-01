@@ -3,12 +3,13 @@
 call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Lightline Themes
 Plug 'itchyny/lightline.vim'
 
+" Language/Syntax
+Plug 'pangloss/vim-javascript'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-ruby/vim-ruby'
@@ -17,8 +18,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'hashivim/vim-terraform'
 Plug 'hashicorp/sentinel.vim'
 
+" Misc
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-eunuch'
+Plug 'lambdalisue/suda.vim'
 Plug 'luochen1990/rainbow'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -32,7 +34,6 @@ syntax enable
 set background=dark
 
 " Dracula
-" let g:dracula_italic = 0
 colo dracula
 let g:lightline = {'colorscheme': 'dracula'}
 highlight Comment cterm=italic gui=italic
@@ -125,5 +126,3 @@ autocmd Filetype markdown setlocal spell
 autocmd Filetype text setlocal spell
 
 let g:netrw_dirhistmax=0
-"For Konsole ¯\_(ツ)_/¯
-"set guicursor=
