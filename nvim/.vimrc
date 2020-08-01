@@ -49,18 +49,8 @@ nnoremap D "_D
 vnoremap d "_d
 
 " Spaces, Tabs
-set ts=4 sw=4 expandtab breakindent
+set ts=2 sw=2 expandtab breakindent
 autocmd FileType python     setlocal    ts=4 sw=4 expandtab
-autocmd Filetype nim        setlocal    ts=2 sw=2 expandtab
-autocmd Filetype html       setlocal    ts=2 sw=2 expandtab
-autocmd Filetype css        setlocal    ts=2 sw=2 expandtab
-autocmd Filetype gohtmltmpl setlocal    ts=2 sw=2 expandtab
-autocmd Filetype json       setlocal    ts=2 sw=2 expandtab
-autocmd Filetype yaml       setlocal    ts=2 sw=2 expandtab
-autocmd Filetype toml       setlocal    ts=2 sw=2 expandtab
-autocmd Filetype javascript setlocal    ts=2 sw=2 expandtab
-autocmd Filetype ruby       setlocal    ts=2 sw=2 expandtab
-autocmd Filetype markdown   setlocal    ts=2 sw=2 expandtab
 autocmd Filetype go         setlocal    ts=4 sw=4 noexpandtab
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
