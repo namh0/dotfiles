@@ -1,0 +1,41 @@
+" Colors / Themes
+set termguicolors
+syntax enable
+set background=dark
+
+" Dracula
+colo dracula
+let g:lightline = {'colorscheme': 'dracula'}
+highlight Comment cterm=italic gui=italic
+
+set number
+set laststatus=2
+" set mouse=a
+set nocompatible
+set clipboard=unnamedplus
+
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+" Spaces, Tabs
+set ts=2 sw=2 expandtab breakindent
+autocmd FileType python     setlocal    ts=4 sw=4 expandtab
+autocmd Filetype go         setlocal    ts=4 sw=4 noexpandtab
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+"let g:indentLine_leadingSpaceEnabled = 1 
+
+nnoremap <C-S> :update<cr>
+inoremap <C-S> <C-O>:update<cr>
+
+let g:rainbow_active = 1
+
+" Spell check settings
+set spelllang=en
+"set spellfile=$HOME/tests/en.utf-8.add
+autocmd Filetype markdown setlocal spell
+autocmd Filetype text setlocal spell
+
+let g:netrw_dirhistmax=0
