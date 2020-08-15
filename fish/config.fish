@@ -29,7 +29,7 @@ alias wgm="$HOME/dotfiles/scripts/wgm.sh"
 alias wgd="$HOME/dotfiles/scripts/wgd.sh"
 alias wgs="sudo wg show"
 alias tfswitch="tfswitch -b $HOME/bin/terraform"
-alias upp="sudo dnf upgrade -y; flatpak update -y"
+alias upp="sudo apt update && sudo apt upgrade -y; flatpak update -y"
 alias copyq="flatpak run com.github.hluk.copyq"
 
 
