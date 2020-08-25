@@ -1,5 +1,5 @@
 # Open with tmux - attach to last session if any are open
-if test "$TMUX" = ""; tmux a || tmux new -s default; end
+# if test "$TMUX" = ""; tmux a || tmux new -s default; end
 
 # For Kitty; set $TERM to xterm-256color instead of xterm-kitty
 if test "$TMUX" = ""; set -gx TERM xterm-256color; end
@@ -31,10 +31,11 @@ alias wgs="sudo wg show"
 alias tfswitch="tfswitch -b $HOME/bin/terraform"
 alias upp="sudo apt update && sudo apt upgrade -y; flatpak update -y"
 alias copyq="flatpak run com.github.hluk.copyq"
+alias code="codium"
 
 
 # ENV
 set -gx GOPATH $HOME/go
-set -gx PATH $GOPATH/bin $PATH $HOME/bin /usr/local/go/bin /usr/local/bin /usr/sbin /snap/bin
+set -gx PATH $GOPATH/bin $PATH $HOME/bin /usr/local/go/bin /usr/local/bin /usr/sbin (yarn global bin)
 
 starship init fish | source
