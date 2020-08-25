@@ -10,7 +10,8 @@ Plug 'itchyny/lightline.vim'
 
 " Language/Syntax
 Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
+"Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-ruby/vim-ruby'
