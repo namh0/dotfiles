@@ -2,20 +2,25 @@
   "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "vscode-icons",
   "editor.fontFamily": "JetBrains Mono Medium",
+  "workbench.startupEditor": "newUntitledFile",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "window.restoreWindows": "none",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
   "vscode-neovim.neovimInitPath": "~/.config/nvim/init.vim",
+  "prettier.singleQuote": true,
 
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -23,10 +28,11 @@
   },
   "[go]": {
     "editor.tabSize": 4,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true
   },
   "[python]": {
     "editor.tabSize": 4
-  },
-  "workbench.startupEditor": "newUntitledFile"
+  }
 }
