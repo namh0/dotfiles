@@ -4,9 +4,6 @@
 # For Kitty; set $TERM to xterm-256color instead of xterm-kitty
 if test "$TMUX" = ""; set -gx TERM xterm-256color; end
 
-# FZF
-source $HOME/.config/fish/fzf-key-bindings.fish
-
 # NeoVim as default editor
 set -gx EDITOR nvim
 
@@ -14,8 +11,7 @@ set -gx EDITOR nvim
 fish_vi_key_bindings
 
 # Aliases
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
 alias c="xclip -selection clipboard"
 alias v="xclip -o"
 alias open="xdg-open"
@@ -36,6 +32,6 @@ alias code="codium"
 
 # ENV
 set -gx GOPATH $HOME/go
-set -gx PATH $GOPATH/bin $PATH $HOME/bin /usr/local/go/bin /usr/local/bin /usr/sbin (yarn global bin)
+set -gx PATH $GOPATH/bin $PATH $HOME/bin $HOME/.local/bin /usr/local/go/bin /usr/local/bin /usr/sbin (yarn global bin)
 
 starship init fish | source
