@@ -1,12 +1,13 @@
 {
   "workbench.colorTheme": "Dracula",
   "workbench.iconTheme": "vscode-icons",
-  "editor.fontFamily": "JetBrains Mono Medium",
+  "editor.fontFamily": "JetBrains Mono Medium, FontAwesome",
   "workbench.startupEditor": "newUntitledFile",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
   "window.restoreWindows": "none",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
   "vscode-neovim.neovimInitPath": "~/.config/nvim/init.vim",
@@ -14,12 +15,10 @@
 
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
     "editor.detectIndentation": false
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
     "editor.detectIndentation": false
   },
   "[json]": {
@@ -29,10 +28,13 @@
   "[go]": {
     "editor.tabSize": 4,
     "editor.insertSpaces": false,
-    "editor.defaultFormatter": "golang.go",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "golang.go"
   },
   "[python]": {
     "editor.tabSize": 4
+  },
+ "terraform.languageServer": {
+    "external": true,
+    "args": ["serve"]
   }
 }
