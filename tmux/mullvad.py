@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env pypy3
 
 import subprocess, re, json
 from pathlib import Path
@@ -37,10 +37,10 @@ def quick_status_check() -> (bool, str):
     stdout, stderr = process.communicate()
     if len(stdout) == 0 and len(stderr) == 0:
         return False, ''
-    endpoint_re = re.findall(r'(\- )(\d+.\d+.\d+.\d+)(:\d+)', stdout.decode('utf-8'))
+    endpoint_re = re.findall(r'(\d+.\d+.\d+.\d+)(:\d+)', stdout.decode('utf-8'))
     if len(endpoint_re) == 0:
         return False, ''
-    endpoint = endpoint_re[0][1].strip()
+    endpoint = endpoint_re[0][0].strip()
     return True, endpoint
 
 
@@ -83,5 +83,5 @@ def main():
 
     print(f'{status_i} {data["status"]}{data["location"]}')
 
-
-main()
+if __name__ == "__main__":
+    main()
