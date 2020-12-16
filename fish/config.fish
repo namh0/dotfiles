@@ -11,7 +11,7 @@ set -gx EDITOR nvim
 fish_vi_key_bindings
 
 # Aliases
-alias vi="vim"
+alias vi="nvim"
 alias c="xclip -selection clipboard"
 alias v="xclip -o"
 alias open="xdg-open"
