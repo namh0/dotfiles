@@ -1,6 +1,6 @@
 # Namho's Dotfiles
 
-* [Manjaro](https://manjaro.org/)
+* [Pop!_OS](https://pop.system76.com/)
 * [Neovim](https://neovim.io/)
 * [Fish](https://fishshell.com/)
 * [Tmux](https://github.com/tmux/tmux)
