@@ -33,8 +33,10 @@
   "[python]": {
     "editor.tabSize": 4
   },
+ "python.formatting.provider": "black",
+ "python.linting.mypyEnabled": true,
  "terraform.languageServer": {
     "external": true,
     "args": ["serve"]
   }
-}
+} 
