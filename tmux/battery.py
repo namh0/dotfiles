@@ -27,4 +27,5 @@ def capacity_icon(cap: int) -> str:
         return " "
 
 
-main()
+if __name__ == "__main__":
+    main()

@@ -17,4 +17,5 @@ def main():
     print(f"{net_icon} {net_name}")
 
 
-main()
+if __name__ == "__main__":
+    main()
