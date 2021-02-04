@@ -2,9 +2,8 @@ set termguicolors
 syntax enable
 set background=dark
 
-" Dracula
-colo dracula
-let g:lightline = {'colorscheme': 'dracula'}
+colo nord
+let g:lightline = {'colorscheme': 'nord'}
 
 " Light themes
 "set background=light
