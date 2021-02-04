@@ -12,28 +12,19 @@ def get_mullvad_status() -> (str, str):
     process = subprocess.Popen(
         ["mullvad", "status", "-l"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
-    stdout, _ = process.communicate()
-
+    stdout, stderr = process.communicate()
+    # print(stdout.decode("utf-8").strip().endswith("unavailable"))
     location = ""
     status = "Wireguard Connected"
     if len(stderr) == 0:
-        stdout = stdout.decode("utf-8")
-        location = (
-            "  " + re.findall(r"(Location: )(.*)", stdout)[0][1].split(",")[0].strip()
-        )
-        status = re.findall(r"(Relay: )(.*)", stdout)[0][1].split(",")[0].strip()
-
+        stdout = stdout.decode("utf-8").strip()
+        if not stdout.endswith("unavailable"):
+            location = (
+                "  "
+                + re.findall(r"(Location: )(.*)", stdout)[0][1].split(",")[0].strip()
+            )
+            status = re.findall(r"(Relay: )(.*)", stdout)[0][1].split(",")[0].strip()
     return status, location
-
-
-# Not working since mullvad 2020.4 - using quick_status_check instead
-# def check_wireguard() -> (bool, str):
-#     process = subprocess.Popen(['sudo', 'wg', 'show'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-#     stdout, stderr = process.communicate()
-#     if len(stdout) == 0 and len(stderr) == 0:
-#         return False, ''
-#     endpoint = re.findall(r'(endpoint: )(.*)(:\d+)', stdout.decode('utf-8'))[0][1].strip()
-#     return True, endpoint
 
 
 def quick_status_check() -> (bool, str):

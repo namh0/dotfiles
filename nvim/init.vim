@@ -15,8 +15,8 @@ if !exists('g:vscode')
 
     " Themes
   Plug 'dracula/vim', { 'as': 'dracula' }
+  " Plug 'arcticicestudio/nord-vim'
   Plug 'lifepillar/vim-solarized8'
-  Plug 'NLKNguyen/papercolor-theme'
 
   " Lightline Themes
   Plug 'itchyny/lightline.vim'
@@ -25,16 +25,16 @@ if !exists('g:vscode')
   Plug 'nathanaelkane/vim-indent-guides'
 
   " Language/Syntax
-  "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+  Plug 'rust-lang/rust.vim'
   Plug 'vim-python/python-syntax'
   Plug 'psf/black', { 'branch': 'stable' }
   Plug 'Vimjas/vim-python-pep8-indent'
   Plug 'Glench/Vim-Jinja2-Syntax'
+  Plug 'cespare/vim-toml'
   " Plug 'fatih/vim-go'
   Plug 'plasticboy/vim-markdown'
   Plug 'hashivim/vim-terraform'
-  " Plug 'hashicorp/sentinel.vim'
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " Misc
   Plug 'tpope/vim-surround'
@@ -49,8 +49,9 @@ if !exists('g:vscode')
 
   " Language
   source ~/.config/nvim/syntax/misc.vim
-  "source ~/.config/nvim/syntax/python.vim
-  source ~/.config/nvim/syntax/go.vim
+  source ~/.config/nvim/syntax/rust.vim
+  source ~/.config/nvim/syntax/coc.vim
+  source ~/.config/nvim/syntax/python.vim
   source ~/.config/nvim/syntax/markdown.vim
   source ~/.config/nvim/syntax/hashicorp.vim
 
@@ -72,3 +73,4 @@ source ~/.config/nvim/keymap/keymap.vim
 
 set clipboard=unnamedplus
 set nocompatible
+set nofoldenable

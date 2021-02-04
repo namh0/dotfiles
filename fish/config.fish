@@ -32,6 +32,8 @@ alias code="codium"
 
 # ENV
 set -gx GOPATH $HOME/go
-set -gx PATH $GOPATH/bin $PATH $HOME/bin $HOME/.local/bin /usr/local/go/bin /usr/local/bin /usr/sbin (yarn global bin)
+set -gx PATH $HOME/.cargo/bin $GOPATH/bin $PATH $HOME/bin $HOME/.local/bin /usr/local/go/bin /usr/local/bin /usr/sbin $HOME/.nimble/bin (yarn global bin) $HOME/.pulumi/bin
 
+# Rust
+# source "$HOME/.cargo/env"
 starship init fish | source
